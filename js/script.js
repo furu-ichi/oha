@@ -29,7 +29,6 @@ const swiper = new Swiper("#js-gallery-swiper", {
 
   // If we need pagination
   pagination: {
-    // el: ".swiper-pagination",
     el: "#js-gallery-pagination",
   },
 
@@ -44,4 +43,44 @@ const swiper = new Swiper("#js-gallery-swiper", {
   // scrollbar: {
   //   el: ".swiper-scrollbar",
   // },
+});
+
+// モーダルを開く
+$(".js-modal-open").on("click", function (e) {
+  e.preventDefault();
+
+  $("#js-about-modal")[0].showModal();
+
+  // 後ろの要素が選択できない
+  // $("#js-about-modal")[0].show();
+});
+
+// モーダルを閉じる
+$(".js-modal-close").on("click", function (e) {
+  e.preventDefault();
+
+  $("#js-about-modal")[0].close();
+});
+
+// スムーススクロール
+$('a[href^="#"]').on("click", function (e) {
+  e.preventDefault();
+
+  const speed = 700;
+
+  const id = $(this).attr("href");
+  const target = "#" == id ? "html" : id;
+  const position = $(target).offset().top;
+
+  $("html, body").animate(
+    { scrollTop: position },
+    speed,
+    "swing" // or linear
+  );
+});
+
+// スマホの場合のスムーススクロールは、ドロワーメニューを閉じる
+$('#js-drawer-content a[href^="#"]').on("click", function (e) {
+  $("#js-drawer-icon").removeClass("is-checked");
+  $("#js-drawer-content").removeClass("is-checked");
 });

@@ -1909,3 +1909,90 @@ body {
     right: 16px;
   }
 }
+.about-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  max-width: calc(100% - 30px);
+  max-height: calc(100% - 40px);
+  overflow: auto;
+  z-index: 52;
+  padding: 16px 15px 64px;
+  border-radius: 20px;
+  background: #fff;
+  border: none;
+  overscroll-behavior-y: none;
+  opacity: 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transition: opacity 0.3s, overlay 0.3s allow-discrete, display 0.3s allow-discrete, -webkit-transform 0.3s;
+  transition: opacity 0.3s, overlay 0.3s allow-discrete, display 0.3s allow-discrete, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s, overlay 0.3s allow-discrete, display 0.3s allow-discrete;
+  transition: opacity 0.3s, transform 0.3s, overlay 0.3s allow-discrete, display 0.3s allow-discrete, -webkit-transform 0.3s;
+}
+.about-modal[open] {
+  opacity: 1;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+@media screen and (min-width: 768px) {
+  .about-modal {
+    width: 1140px;
+    padding: 49px 70px 75px;
+  }
+}
+.about-modal::-ms-backdrop {
+  opacity: 0.2;
+  background: #000;
+}
+.about-modal::backdrop {
+  opacity: 0.2;
+  background: #000;
+}
+
+@starting-style {
+  .about-modal[open] {
+    opacity: 0;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+}
+.about-modal__head {
+  position: sticky;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.about-modal__close-icon img {
+  width: 37px;
+}
+
+.about-modal__body {
+  margin-top: 12px;
+}
+@media screen and (min-width: 768px) {
+  .about-modal__body {
+    margin-top: 43px;
+  }
+}
+.about-modal__body p {
+  font-size: 14px;
+}
+@media screen and (min-width: 768px) {
+  .about-modal__body p {
+    font-size: 16px;
+  }
+}
+.about-modal__body p:nth-child(2) {
+  margin-top: 20px;
+}
+
+.about-modal__close-button {
+  text-align: center;
+  margin-top: 30px;
+}

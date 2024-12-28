@@ -35,10 +35,10 @@
           <a href=""><img src="./img/logo.png" alt="" /></a>
         </h1>
         <nav class="header__nav">
-          <a href="" class="header__link">サービスについて</a>
-          <a href="" class="header__link">使い方</a>
-          <a href="" class="header__link">メリット</a>
-          <a href="" class="header__button button">お問い合わせ</a>
+          <a href="#about" class="header__link">サービスについて</a>
+          <a href="#how-to-use" class="header__link">使い方</a>
+          <a href="#merit" class="header__link">メリット</a>
+          <a href="#contact" class="header__button button">お問い合わせ</a>
         </nav>
         <button id="js-drawer-icon" class="header__open drawer-icon">
           <span class="drawer-icon__bar"></span>
@@ -51,11 +51,11 @@
     <!-- ドロワー -->
     <div id="js-drawer-content" class="drawer-content">
       <nav class="drawer-content__menu">
-        <a href="" class="drawer-content__link">サービスについて</a>
-        <a href="" class="drawer-content__link">使い方</a>
-        <a href="" class="drawer-content__link">メリット</a>
+        <a href="#about" class="drawer-content__link">サービスについて</a>
+        <a href="#how-to-use" class="drawer-content__link">使い方</a>
+        <a href="#merit" class="drawer-content__link">メリット</a>
         <div class="drawer-content__button">
-          <a href="" class="button">お問い合わせ</a>
+          <a href="#contact" class="button">お問い合わせ</a>
         </div>
       </nav>
     </div>
@@ -78,7 +78,9 @@
             通話アプリです。
           </p>
           <div class="mv__button">
-            <a href="" class="button button--type2">アプリダウンロード</a>
+            <a href="#contact" class="button button--type2"
+              >アプリダウンロード</a
+            >
           </div>
         </div>
         <div class="mv__image">
@@ -156,7 +158,7 @@
       </div>
     </section>
 
-    <section class="about">
+    <section id="about" class="about">
       <div class="about__inner">
         <div class="about__title">
           <img src="./img/about-logo.png" alt="OHA!" />
@@ -200,11 +202,30 @@
           </p>
           <div class="about__pop">＼開発者はお坊さん？／</div>
           <div class="about__button">
-            <button class="button">誕生ストーリーを見る</button>
+            <button class="button js-modal-open">誕生ストーリーを見る</button>
           </div>
         </div>
       </div>
     </section>
+
+    <dialog id="js-about-modal" class="about-modal">
+      <div class="about-modal__head">
+        <button class="about-modal__close-icon js-modal-close">
+          <img src="./img/close-icon.png" alt="モーダルを閉じる" />
+        </button>
+      </div>
+      <div class="about-modal__body">
+        <p>
+          お坊さんの師匠は、ある日自分が寝坊して仏教の講義に遅刻してしまい、急いで作ったアプリがきっかけでした。そのアプリは、自分のスマートフォンにセットした時間になると、仏教の教えをパッと思い出すようになっていました。<br />お坊さんはそのアプリを見て、自分もそんなアプリが欲しいと思い、師匠に頼んで自分専用のアプリを作ってもらったのだそうです。そして、お坊さんは太郎にそのアプリを使ってもらうように勧めました。
+        </p>
+        <p>
+          太郎は早速、そのアプリをダウンロードして設定してみました。翌朝、セットした時間になると、スマートフォンが音を立てて仏教の教えが表示されました。「一日を立派に過ごすためには、まず朝イチで身心の健康を整えることが大切です」という教えに太郎は心を動かされ、僧侶になるかもしれないと思いました。<br />以来、太郎は毎朝ちゃんと起きることができ、授業に遅刻することはなくなりました。そして、太郎はそのアプリの効果に感服し、友人たちにも勧めるようになっていきました。そうして、そのアプリは口コミで広まり、多くの人に利用されるようになっていったのでした。
+        </p>
+      </div>
+      <div class="about-modal__close-button">
+        <button type="button" class="button js-modal-close">閉じる</button>
+      </div>
+    </dialog>
 
     <section class="movie">
       <div class="movie__inner">
@@ -227,7 +248,7 @@
       </div>
     </section>
 
-    <section class="how-to-use">
+    <section id="how-to-use" class="how-to-use">
       <div class="how-to-use__inner inner">
         <div class="how-to-use__title">
           <div class="heading">
@@ -354,7 +375,7 @@
     </section>
 
     <!-- 自力MERITセクション -->
-    <section class="merit">
+    <section id="merit" class="merit">
       <div class="merit__inner inner">
         <div class="heading">
           <div class="heading-en">MERIT</div>
@@ -442,7 +463,7 @@
           ><br />てかほんと使って。お願い。
         </p>
         <div class="cta__button">
-          <a href="" class="button">今すぐダウンロード</a>
+          <a href="#contact" class="button">今すぐダウンロード</a>
         </div>
       </div>
     </section>
@@ -631,7 +652,7 @@
       </div>
     </section>
 
-    <section class="contact">
+    <section id="contact" class="contact">
       <div class="contact__inner inner">
         <div class="contact__box">
           <div class="contact__title">
@@ -790,7 +811,7 @@
       </div>
     </footer>
 
-    <a href="" class="pagetop">
+    <a href="#" class="pagetop">
       <img src="./img/pagetop-img.png" alt="" />
     </a>
 

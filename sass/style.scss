@@ -2217,3 +2217,85 @@ body {
   img {
   }
 }
+
+// モーダル
+.about-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  max-width: calc(100% - 15px * 2);
+  max-height: calc(100% - 20px * 2);
+  overflow: auto;
+  z-index: 52;
+  padding: 16px 15px 64px;
+  border-radius: 20px;
+  background: #fff;
+  border: none;
+  overscroll-behavior-y: none;
+
+  opacity: 0;
+  transform: scaleY(0);
+  transition: opacity 0.3s, transform 0.3s, overlay 0.3s allow-discrete,
+    display 0.3s allow-discrete;
+
+  &[open] {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  @include mq("pc") {
+    width: 1140px;
+    padding: 49px 70px 75px;
+  }
+
+  // モーダル開いてる時の背景の色
+  &::backdrop {
+    opacity: 0.2;
+    background: #000;
+  }
+}
+
+@starting-style {
+  .about-modal[open] {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+.about-modal__head {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-modal__close-icon {
+  img {
+    width: 37px;
+  }
+}
+
+.about-modal__body {
+  margin-top: 12px;
+
+  @include mq("pc") {
+    margin-top: 43px;
+  }
+
+  p {
+    font-size: 14px;
+
+    @include mq("pc") {
+      font-size: 16px;
+    }
+
+    &:nth-child(2) {
+      margin-top: 20px;
+    }
+  }
+}
+
+.about-modal__close-button {
+  text-align: center;
+  margin-top: 30px;
+}
