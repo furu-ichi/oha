@@ -16,6 +16,13 @@
       rel="stylesheet"
     />
 
+    <!-- Swiper -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    /> -->
+    <link rel="stylesheet" href="./css/lib/swiper-bundle.min.css" />
+
     <!-- スタイルシート -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
@@ -33,13 +40,25 @@
           <a href="" class="header__link">メリット</a>
           <a href="" class="header__button button">お問い合わせ</a>
         </nav>
-        <button class="header__open drawer-icon">
+        <button id="js-drawer-icon" class="header__open drawer-icon">
           <span class="drawer-icon__bar"></span>
           <span class="drawer-icon__bar"></span>
           <span class="drawer-icon__bar"></span>
         </button>
       </div>
     </header>
+
+    <!-- ドロワー -->
+    <div id="js-drawer-content" class="drawer-content">
+      <nav class="drawer-content__menu">
+        <a href="" class="drawer-content__link">サービスについて</a>
+        <a href="" class="drawer-content__link">使い方</a>
+        <a href="" class="drawer-content__link">メリット</a>
+        <div class="drawer-content__button">
+          <a href="" class="button">お問い合わせ</a>
+        </div>
+      </nav>
+    </div>
 
     <!-- メインビジュアル -->
     <div class="mv">
@@ -343,67 +362,87 @@
         </div>
         <div class="merit__boxes">
           <div class="merit__box">
-            <div class="merit__image">
-              <img src="./img/merit1-img.png" alt="" />
-            </div>
-            <div class="merit__content">
-              <div class="merit-item">
-                <div class="merit-item__heading">
-                  <div class="merit-item__number">1</div>
-                  <div class="merit-item__title">
-                    通りすがりに猫が<br />挨拶してくれるようになる
+            <div class="merit__container is-reverse">
+              <div class="merit__image">
+                <img src="./img/merit1-img.png" alt="" />
+              </div>
+              <div class="merit__content">
+                <div class="merit-item">
+                  <div class="merit-item__heading">
+                    <div class="merit-item__number">1</div>
+                    <div class="merit-item__title">
+                      通りすがりに猫が<br />挨拶してくれるようになる
+                    </div>
                   </div>
-                </div>
-                <div class="merit-item__description">
-                  偶然の可能性も高いですが、OHA!を使うようになってから、やたらと猫が挨拶してくれるようになった、というお話をいただきます。とはいえ、自惚れすぎてはいけません。挨拶されたからといって一方的に話しかけ続けてしまうと気まぐれ猫ちゃんにうんざりされる上に周りの目も冷ややかです。
+                  <div class="merit-item__description">
+                    偶然の可能性も高いですが、OHA!を使うようになってから、やたらと猫が挨拶してくれるようになった、というお話をいただきます。とはいえ、自惚れすぎてはいけません。挨拶されたからといって一方的に話しかけ続けてしまうと気まぐれ猫ちゃんにうんざりされる上に周りの目も冷ややかです。
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="merit__box">
-            <div class="merit__image">
-              <img src="./img/merit2-img.png" alt="" />
-            </div>
-            <div class="merit__content">
-              <div class="merit-item">
-                <div class="merit-item__heading">
-                  <div class="merit-item__number">2</div>
-                  <div class="merit-item__title">
-                    商店街の福引で<br />3等のティッシュボックスが<br
-                      class="hidden-pc"
-                    />当たる
+            <div class="merit__container">
+              <div class="merit__image">
+                <img src="./img/merit2-img.png" alt="" />
+              </div>
+              <div class="merit__content">
+                <div class="merit-item">
+                  <div class="merit-item__heading">
+                    <div class="merit-item__number">2</div>
+                    <div class="merit-item__title">
+                      商店街の福引で<br />3等のティッシュボックスが<br
+                        class="hidden-pc"
+                      />当たる
+                    </div>
                   </div>
-                </div>
-                <div class="merit-item__description">
-                  OHA!を使うことで、どういった因果関係なのか、ちょっと運もよくなります。あなたの街には商店街があるかわかりませんが、もしあればチャンスです。買い物をして、福引に挑んでみましょう。3等のティッシュボックスが当たること間違いなしです。
-                  <br />
-                  もう景品のポケットティッシュで涙を拭う、なんてことはないのです。
+                  <div class="merit-item__description">
+                    OHA!を使うことで、どういった因果関係なのか、ちょっと運もよくなります。あなたの街には商店街があるかわかりませんが、もしあればチャンスです。買い物をして、福引に挑んでみましょう。3等のティッシュボックスが当たること間違いなしです。
+                    <br />
+                    もう景品のポケットティッシュで涙を拭う、なんてことはないのです。
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="merit__box">
-            <div class="merit__image">
-              <img src="./img/merit3-img.png" alt="" />
-            </div>
-            <div class="merit__content">
-              <div class="merit-item">
-                <div class="merit-item__heading">
-                  <div class="merit-item__number">3</div>
-                  <div class="merit-item__title">
-                    掃除をしていたら、<br />過去に自分が隠した<br
-                      class="hidden-pc"
-                    />へそくりが出てきた
+            <div class="merit__container is-reverse">
+              <div class="merit__image">
+                <img src="./img/merit3-img.png" alt="" />
+              </div>
+              <div class="merit__content">
+                <div class="merit-item">
+                  <div class="merit-item__heading">
+                    <div class="merit-item__number">3</div>
+                    <div class="merit-item__title">
+                      掃除をしていたら、<br />過去に自分が隠した<br
+                        class="hidden-pc"
+                      />へそくりが出てきた
+                    </div>
                   </div>
-                </div>
-                <div class="merit-item__description">
-                  自分が隠したへそくりを自分が発見するのはプラスマイナス0ですが、なんだか嬉しいものですよね。過去の自分よ、素敵なサプライズをありがとう。
-                  <br />
-                  へそくりをしたことがない方にとっては申し訳ないですがこのイベントは起こりませんのでアプリ使用の再検討をおすすめします。
+                  <div class="merit-item__description">
+                    自分が隠したへそくりを自分が発見するのはプラスマイナス0ですが、なんだか嬉しいものですよね。過去の自分よ、素敵なサプライズをありがとう。
+                    <br />
+                    へそくりをしたことがない方にとっては申し訳ないですがこのイベントは起こりませんのでアプリ使用の再検討をおすすめします。
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta__inner inner">
+        <p class="cta__text">
+          どうですか？<br class="hidden-pc" /><span class="inline-block"
+            >早速今日から使ってみたく</span
+          ><span class="inline-block">なりましたか？</span
+          ><br />てかほんと使って。お願い。
+        </p>
+        <div class="cta__button">
+          <a href="" class="button">今すぐダウンロード</a>
         </div>
       </div>
     </section>
@@ -445,6 +484,150 @@
           </table>
         </div>
         <div class="compare__attention hidden-pc">横にスクロールできます</div>
+      </div>
+    </section>
+
+    <!-- Q&A -->
+    <section class="qa">
+      <div class="qa__inner inner">
+        <div class="qa__title">
+          <div class="heading">
+            <div class="heading-en">Q&A</div>
+            <div class="heading-ja">よくあるご質問</div>
+          </div>
+        </div>
+        <div class="qa__boxes">
+          <!-- <details class="qa__box qa-box">
+            <summary class="qa-box__head">
+              <span class="qa-box__head-icon">Q</span>
+              <span class="qa-box__head-text"
+                >僕があまりにも起きない場合、相手に怒られることはあるのでしょうか？怖くて朝も起きられません。</span
+              >
+            </summary>
+            <div class="qa-box__body">
+              <div class="qa-box__a">
+                <span class="qa-box__a-icon">A</span>
+                <p class="qa-box__a-text">残念ながら、相手によります。</p>
+              </div>
+            </div>
+          </details> -->
+
+          <div class="qa__box qa-box is-open">
+            <button type="button" class="qa-box__head js-accordion">
+              <span class="qa-box__head-icon">Q</span>
+              <span class="qa-box__head-text"
+                >僕があまりにも起きない場合、相手に怒られることはあるのでしょうか？怖くて朝も起きられません。</span
+              >
+            </button>
+            <div class="qa-box__body">
+              <div class="qa-box__a">
+                <span class="qa-box__a-icon">A</span>
+                <span class="qa-box__a-text">残念ながら、相手によります。</span>
+              </div>
+            </div>
+          </div>
+          <div class="qa__box qa-box">
+            <button type="button" class="qa-box__head js-accordion">
+              <span class="qa-box__head-icon">Q</span>
+              <span class="qa-box__head-text"
+                >今現在の登録者は何人ですか？</span
+              >
+            </button>
+            <div class="qa-box__body">
+              <div class="qa-box__a">
+                <span class="qa-box__a-icon">A</span>
+                <span class="qa-box__a-text"
+                  >現在の登録者は150万人(から149.998万人を引いた人数)です。この文を2行にしたいのでもう一度言います。現在の登録者は150万人(から149.998万人を引いた人数)です！</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="qa__box qa-box">
+            <button type="button" class="qa-box__head js-accordion">
+              <span class="qa-box__head-icon">Q</span>
+              <span class="qa-box__head-text"
+                >アプリをインストールして使う妄想だけで朝起きられるようになりました！結局インストールはしてないですが、ありがとうございます！</span
+              >
+            </button>
+            <div class="qa-box__body">
+              <div class="qa-box__a">
+                <span class="qa-box__a-icon">A</span>
+                <span class="qa-box__a-text"
+                  >それはよかったです！しかしインストールはしてほしかった！！！</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="gallery__inner inner">
+        <div class="gallery__title">
+          <div class="heading">
+            <div class="heading-en">GALLERY</div>
+            <div class="heading-ja">ギャラリー</div>
+          </div>
+        </div>
+        <div class="gallery__slider">
+          <!-- Slider main container -->
+          <div id="js-gallery-swiper" class="swiper gallery__swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide gallery__slide">
+                <div class="gallery-card">
+                  <div class="gallery-card__image">
+                    <img src="./img/gallery-1.png" alt="" />
+                  </div>
+                  <p class="gallery-card__text">
+                    最高な海。を拝んでいる私最高...
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide gallery__slide">
+                <div class="gallery-card">
+                  <div class="gallery-card__image">
+                    <img src="./img/gallery-2.png" alt="" />
+                  </div>
+                  <p class="gallery-card__text">
+                    モーニングは一番のり。今日も私えらい。
+                  </p>
+                </div>
+              </div>
+              <div class="swiper-slide gallery__slide">
+                <div class="gallery-card">
+                  <div class="gallery-card__image">
+                    <img src="./img/gallery-3.png" alt="" />
+                  </div>
+                  <p class="gallery-card__text">
+                    風車のある公園ヨガ。みんな私に釘付け。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div
+              id="js-gallery-pagination"
+              class="swiper-pagination gallery__pagination"
+            ></div>
+
+            <!-- If we need navigation buttons -->
+            <div
+              id="js-gallery-prev"
+              class="swiper-button-prev gallery__prev"
+            ></div>
+            <div
+              id="js-gallery-next"
+              class="swiper-button-next gallery__next"
+            ></div>
+
+            <!-- If we need scrollbar -->
+            <!-- 今回はスクロールバー不要なので削除 -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+          </div>
+        </div>
       </div>
     </section>
 
@@ -599,7 +782,21 @@
       </div>
     </section>
 
+    <footer class="footer">
+      <div class="footer__inner inner">
+        <small class="footer__copyright"
+          >COPYRIGHT 2023 株式会社デイトラ
+        </small>
+      </div>
+    </footer>
+
+    <a href="" class="pagetop">
+      <img src="./img/pagetop-img.png" alt="" />
+    </a>
+
     <!-- JavaScript -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <script src="./js/lib/swiper-bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
