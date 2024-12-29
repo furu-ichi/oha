@@ -84,3 +84,14 @@ $('#js-drawer-content a[href^="#"]').on("click", function (e) {
   $("#js-drawer-icon").removeClass("is-checked");
   $("#js-drawer-content").removeClass("is-checked");
 });
+
+// トップへ戻るアイコンを少しスクロールしてから表示
+$(window).on("scroll", function () {
+  const top = $(window).scrollTop();
+
+  if (top > 100) {
+    $("#js-pagetop").addClass("is-show");
+  } else {
+    $("#js-pagetop").removeClass("is-show");
+  }
+});

@@ -25,6 +25,11 @@ $breakpoints: (
   }
 }
 
+// かんたんにスムーススクロールを実現できるけど、カスタマイズができない
+// html {
+//   scroll-behavior: smooth; // auto or smooth;
+// }
+
 body {
   font-size: $font-size-base;
   line-height: $line-height-base;
@@ -2207,6 +2212,15 @@ body {
   position: fixed;
   bottom: 10px;
   right: 10px;
+
+  opacity: 0; // 見えなくする
+  visibility: hidden; // 操作できなくする
+  transition: opacity 0.3s, visibility 0.3s;
+
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
+  }
 
   @include mq("pc") {
     width: 76px;
