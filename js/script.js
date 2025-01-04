@@ -95,3 +95,20 @@ $(window).on("scroll", function () {
     $("#js-pagetop").removeClass("is-show");
   }
 });
+
+// スクロールしたらふわっと表示されるアニメーション
+const observer = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    // 表示領域に入ったら
+    if (entry.isIntersecting) {
+      entry.target.classList.add("is-in-view");
+    } else {
+      entry.target.classList.remove("is-in-view");
+    }
+  });
+});
+
+const inViewItems = document.querySelectorAll(".js-in-view");
+inViewItems.forEach(function (inViewItem) {
+  observer.observe(inViewItem);
+});
